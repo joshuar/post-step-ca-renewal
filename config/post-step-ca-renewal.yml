@@ -1,0 +1,12 @@
+---
+cert: /path/to/cert.crt
+key: /path/to/key.crt
+ca: /path/to/ca.crt
+actions:
+  - name: Do Something
+    cert: /copy/to/cert.crt
+    key: /copy/top/key.crt
+    fullchain: /copy/to/fullchain.crt
+    command: 
+      - /run/something someargument
+      - /run/something/else

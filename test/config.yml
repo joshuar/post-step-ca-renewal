@@ -1,0 +1,15 @@
+---
+cert: ./test/certs/cert.crt
+key: ./test/certs/key.crt
+ca: ./test/certs/ca.crt
+actions:
+  - name: Test copy 1
+    cert: ./test/dest/cert1.crt
+    key: ./test/dest/key1.crt
+    fullchain: ./test/dest/fullchain1.crt
+  - name: Test copy 2
+    cert: ./test/dest/cert2.crt
+    key: ./test/dest/key2.crt
+    command: 
+      - logger hello
+      - systemctl status

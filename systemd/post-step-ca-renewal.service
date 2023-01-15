@@ -1,0 +1,13 @@
+[Unit]
+Description=Post Step CA Renewal
+Documentation=https://github.com/joshuar/post-step-ca-renewal
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/post-step-ca-renewal
+ProtectSystem=yes
+
+[Install]
+WantedBy=multi-user.target
