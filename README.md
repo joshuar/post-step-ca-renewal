@@ -22,7 +22,7 @@ RPM/DEB packages are available, see the [releases](https://github.com/joshuar/po
 
 ### go get
 ```shell
-go get -u github.com/joshuar/cf-ddns
+go get -u github.com/joshuar/post-step-ca-renewal
 ```
 
 ## Contributions
