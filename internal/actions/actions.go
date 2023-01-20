@@ -4,11 +4,12 @@ Copyright © 2023 Joshua Rich <joshua.rich@gmail.com>
 package actions
 
 type Action struct {
-	Name      string   `json:"name"`
-	Cert      string   `json:"cert"`
-	Key       string   `json:"key"`
-	FullChain string   `json:"fullchain"`
-	Command   []string `json:"command"`
+	Name        string   `json:"name"`
+	Cert        string   `json:"cert"`
+	Key         string   `json:"key"`
+	FullChain   string   `json:"fullchain"`
+	PreCommand  []string `json:"precommand"`
+	PostCommand []string `json:"postcommand"`
 }
 
 type AllActions struct {

@@ -4,9 +4,11 @@ key: /path/to/key.crt
 ca: /path/to/ca.crt
 actions:
   - name: Do Something
+    precommand:
+      - /do/something first
     cert: /copy/to/cert.crt
     key: /copy/top/key.crt
     fullchain: /copy/to/fullchain.crt
-    command: 
+    postcommand: 
       - /run/something someargument
       - /run/something/else

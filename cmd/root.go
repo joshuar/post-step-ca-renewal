@@ -92,6 +92,12 @@ func performActions(changed string, certConfig *certs.CertConfig, allActions *ac
 		started := time.Now()
 		defer wg.Done()
 
+		if action.PreCommand != nil {
+			for _, cmd := range action.PreCommand {
+				log.Debugf("%s: running pre-command %s", action.Name, cmd)
+				run(cmd)
+			}
+		}
 		// switch filepath.Base(changed) {
 		// case filepath.Base(certConfig.Cert):
 		log.Debugf("%s - copying cert %s to %s", action.Name, certConfig.Cert, action.Cert)
@@ -113,9 +119,9 @@ func performActions(changed string, certConfig *certs.CertConfig, allActions *ac
 				log.Errorf("%s: failed to create fullchain, %v", action.Name, err)
 			}
 		}
-		if action.Command != nil {
-			for _, cmd := range action.Command {
-				log.Debugf("%s: running command %s", action.Name, cmd)
+		if action.PostCommand != nil {
+			for _, cmd := range action.PostCommand {
+				log.Debugf("%s: running post-command %s", action.Name, cmd)
 				run(cmd)
 			}
 		}
